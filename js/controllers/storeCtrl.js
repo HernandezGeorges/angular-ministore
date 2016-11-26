@@ -23,7 +23,7 @@
 
     store.products = [];
 
-    $http.get('/gems/products.json').success(function(data){
+    $http.get('products.json').success(function(data){
       store.products = data;
     });
 
