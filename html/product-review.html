@@ -1,0 +1,41 @@
+<div class="panel" ng-controller="ReviewController as RevCtrl">
+
+  <h4>Reviews</h4>
+
+  <blockquote ng-repeat="review in product.reviews">
+    <strong class="clearfix">{{ RevCtrl.starCount(review.stars) }}</strong>
+    {{ review.body }}
+    <cite class="clearfix">{{ review.author }} - {{ review.createdOn | date }}</cite>
+  </blockquote>
+
+  <form name="reviewForm" ng-submit="reviewForm.$valid && RevCtrl.addReview(product)" novalidate>
+
+    <!-- Live Preview -->
+    <blockquote>
+      <strong class="clearfix">{{ RevCtrl.starCount(RevCtrl.review.stars) }}</strong>
+      {{ RevCtrl.review.body }}
+      <cite class="clearfix">- {{ RevCtrl.review.author }}</cite>
+    </blockquote>
+
+    <!-- Review Form -->
+    <h4>Submit a review</h4>
+    <fieldset class="form-group">
+      <select name="stars" class="form-control"  ng-options="stars for stars in [5,4,3,2,1]" ng-model="RevCtrl.review.stars" title="stars" required>
+        <option value="">Rate the Product</option>
+      </select>
+    </fieldset>
+
+    <fieldset class="form-group">
+      <textarea class="form-control" ng-model="RevCtrl.review.body" placeholder="Write a review" required></textarea>
+    </fieldset>
+
+    <fieldset class="form-group">
+      <input type="email" class="form-control" ng-model="RevCtrl.review.author" placeholder="email@author" required />
+    </fieldset>
+
+    <fieldset class="form-group">
+      <input type="submit" value="submit" class="btn btn-primary pull-right">
+    </fieldset>
+  </form>
+
+</div>

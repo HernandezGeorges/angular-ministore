@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app="gemStore"><!-- "ng-app" directive run the "store" module when the document loads -->
+
+  <head>
+    <meta charset="utf-8">
+    <title>Gem Store</title>
+    <!-- had a title tag on preferred stylesheet -->
+    <link rel="stylesheet" href="css/bootstrap.fork.css" media="screen" charset="utf-8">
+    <link rel="stylesheet" href="css/gems.css" media="screen" charset="utf-8">
+  </head>
+
+  <body ng-controller="StoreController as store" class="container">
+
+    <!--  Store Header  -->
+    <header>
+      <h1 class="text-center">Flatlander Crafted Gems</h1>
+      <h2 class="text-center">– an Angular store –</h2>
+    </header>
+
+    <ul class="list-group">
+
+      <li class="list-group-item" ng-hide="product.soldOut" ng-repeat="product in store.products">
+
+        <product-title></product-title>
+
+        <product-gallery></product-gallery>
+
+        <product-panels></product-panels>
+
+        <!-- <button ng-show="product.canPurchase" class="btn btn-default"> Add to Cart </button> -->
+
+      </li>
+
+    </ul>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angularjs-ie8-build/1.4.7/angular.min.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/controllers/storeCtrl.js"></script>
+    <script type="text/javascript" src="js/controllers/reviewCtrl.js"></script>
+    <script type="text/javascript" src="js/directives/products.js"></script>
+  </body>
+</html>

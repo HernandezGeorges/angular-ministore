@@ -1,0 +1,13 @@
+.ng-invalid.ng-dirty {
+  border-color: #FA787E;
+}
+.ng-valid.ng-dirty {
+  border-color: #78FA89;
+}
+.title {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+.panel blockquote {
+  font-size: 14px !important;
+}
